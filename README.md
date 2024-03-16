@@ -1,4 +1,6 @@
 # GitOps-Pipeline
+# Overview Diagram
+![image](https://github.com/piyushdhir1/GitOps-Pipeline/assets/82114698/b68a8b52-e1a1-413b-a31c-3d10c1b6b7dd)
 
 # Step 01 (Initial Step)
 <h3> (A) Create a minikube single node cluster.</h3>
