@@ -1,0 +1,29 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: v1v2rollout
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: p5050/v1.0-release:1
+        ports:
+        - containerPort: 80
+  strategy:
+    canary:
+      steps:
+      - setWeight: 20
+      - pause: {duration: "30s"}
+      - setWeight: 50
+      - pause: {duration: "30s"}
+      - setWeight: 100
+      canaryService: canary
+      stableService: stable
