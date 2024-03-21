@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: p5050/v1.0-release:2
+        image: p5050/v1.0-release:1
         ports:
         - containerPort: 80
   strategy:
